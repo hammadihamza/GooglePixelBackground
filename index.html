@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1f4dfc41a1.js" crossorigin="anonymous"></script>
+    <title>Google Pixel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>ISP <i class="fas fa-battery-full"></i><i class="fas fa-wifi"></i><i class="fas fa-signal"></i></p>
+    <div class="DT">
+    <p id="Time"></p>
+    <p id="Date"></p>
+    </div>
+    <script>
+        let mytime= new Date().toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3")
+        let d = document.getElementById("Time");
+        d.innerText = mytime;
+
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        let de = new Date();
+        let dayName = days[de.getDay()];
+
+        const da = new Date();
+        let MM = monthNames[da.getMonth()];
+
+        const db = new Date();
+        let DM = db.getDate() 
+        let c = document.getElementById("Date");
+                c.innerText = dayName+", " + MM +" "+ DM;
+    </script>
+</body>
+</html>
